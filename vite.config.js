@@ -86,6 +86,9 @@ function royalSeo() {
 
 export default defineConfig({
   base: process.env.BASE_PATH || '/',
+  define: {
+    'import.meta.env.VITE_SITE_URL': JSON.stringify(SITE_URL),
+  },
   plugins: [vue(), royalSeo()],
   assetsInclude: ['**/*.JPG', '**/*.JPEG', '**/*.PNG', '**/*.WEBP', '**/*.JFIF', '**/*.jfif'],
 })

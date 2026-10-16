@@ -2,7 +2,7 @@ import { categorias } from './listaCategorias.js'
 import { empresa } from './empresa.js'
 
 const urlDoAmbiente =
-  (typeof process !== 'undefined' && process.env && process.env.SITE_URL) ||
+  (typeof process !== 'undefined' && process.env && (process.env.SITE_URL || process.env.URL)) ||
   (import.meta.env && import.meta.env.VITE_SITE_URL)
 
 export const SITE_URL = (urlDoAmbiente || 'https://www.royallocacoes.com.br').replace(/\/+$/, '')
