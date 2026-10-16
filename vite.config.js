@@ -85,6 +85,7 @@ function royalSeo() {
 }
 
 export default defineConfig({
+  base: process.env.BASE_PATH || '/',
   plugins: [vue(), royalSeo()],
   assetsInclude: ['**/*.JPG', '**/*.JPEG', '**/*.PNG', '**/*.WEBP', '**/*.JFIF', '**/*.jfif'],
 })
