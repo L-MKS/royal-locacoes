@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import comprimirImagens from './plugins/comprimirImagens.js'
 import { SITE_URL, paginas, seoDaRota, urlCompleta, dadosEstruturados } from './src/data/seo.js'
 
 const escapar = (t) => t.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -89,6 +90,6 @@ export default defineConfig({
   define: {
     'import.meta.env.VITE_SITE_URL': JSON.stringify(SITE_URL),
   },
-  plugins: [vue(), royalSeo()],
+  plugins: [vue(), royalSeo(), comprimirImagens()],
   assetsInclude: ['**/*.JPG', '**/*.JPEG', '**/*.PNG', '**/*.WEBP', '**/*.JFIF', '**/*.jfif'],
 })
